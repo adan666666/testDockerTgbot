@@ -18,10 +18,10 @@ func TgRobot(config Conf) {
 
 	msg := tgbotapi.NewMessage(config.TgBot.ChatID, "大佬们好，我是下班倒计时机器人")
 	//发送消息
-	_, err = bot.Send(msg)
-	if err != nil {
-		panic(err)
-	}
+	//_, err = bot.Send(msg)
+	//if err != nil {
+	//	panic(err)
+	//}
 	u := tgbotapi.NewUpdate(0) //创建了一个新的更新对象 u，用于从 Telegram 服务器获取消息更新。参数 0 表示从最早的未读消息开始获取更新.
 	u.Timeout = 60             //60秒内没有消息更新，就停止轮询，以节约资源
 

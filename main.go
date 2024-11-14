@@ -1,10 +1,13 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/yaml.v3"
+	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"testDocker/rebot"
 )
@@ -35,6 +38,22 @@ func main() {
 				},
 			})
 	})
+	tr := http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
+	client := &http.Client{Transport: &tr}
+	fmt.Println(client)
+	resp, err := client.Get("https://baidu.com")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	// 读取响应内容
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(string(body))
 	fmt.Println("启动机器人...")
 	go rebot.TgRobot(conf)
 	r.Run(":5000")
