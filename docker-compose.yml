@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  #放可执行文件不是目录
+  app:
+    build: .
+    command: ["/app/main"]
+    image: tgbot:v1.0 # 指定镜像名称和标签
+    container_name: tgbot
+    volumes:
+      - /etc/localtime:/etc/localtime:ro  # 挂载主机的时间配置文件
+    ports:
+      - "5000:5000"

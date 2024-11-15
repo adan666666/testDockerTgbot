@@ -20,6 +20,7 @@ func StartTimer(tgBot *tgbotapi.BotAPI, conf Conf) {
 		if duration < 2*time.Second { //duration < time.Second  时间还可以这样对比  duration < 0
 			go sendMsg(tgBot, conf)
 			StartTimer(tgBot, conf)
+			time.Sleep(3 * time.Second)
 			break
 		}
 	}

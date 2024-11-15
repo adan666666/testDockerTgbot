@@ -1,2 +1,5 @@
-docker run -itd --name go1 -p 5000:5000 go1
+docker run -itd \
+--privileged=true \
+-v /etc/localtime:/etc/localtime:ro \
+--name tgbot -p 5000:5000 tgbot
 

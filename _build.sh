@@ -1,4 +1,4 @@
-docker stop go1
-docker rm go1
-docker rmi go1
-docker build -t go1 .
+#docker stop tgbot
+docker rm -f tgbot
+docker rmi -f tgbot
+docker build -t tgbot .

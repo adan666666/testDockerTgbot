@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"testDocker/rebot"
+	"time"
 )
 
 // https://www.bilibili.com/video/BV1HH4y1W7H4/?spm_id_from=333.337.search-card.all.click&vd_source=55f7073cc1049edc8b91cea83217e7b6 视频
@@ -31,6 +32,7 @@ func main() {
 				"code": 0,
 				"msg":  "看到消息就说明布置成功了。",
 				"data": gin.H{
+					"tiem":   time.Now().Format("2006-01-02 15:04:05"),
 					"token":  conf.TgBot.Token,
 					"name":   conf.System.Name,
 					"chatId": conf.TgBot.ChatID,

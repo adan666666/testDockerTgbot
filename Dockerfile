@@ -41,3 +41,6 @@ COPY --from=builder /build/main /app
 EXPOSE 5000
 # 启动应用
 CMD ["./main"]
+
+# 设置容器启动时运行的命令 /放可执行文件不是目录
+ENTRYPOINT ["/app/main"]
