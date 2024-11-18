@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 services:
   #放可执行文件不是目录
   app:

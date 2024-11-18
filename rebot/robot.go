@@ -14,7 +14,7 @@ func TgRobot(config Conf) {
 	if err != nil {
 		panic(err)
 	}
-	bot.Debug = true
+	//bot.Debug = true
 
 	msg := tgbotapi.NewMessage(config.TgBot.ChatID, "大佬们好，我是下班倒计时机器人")
 	//发送消息

@@ -50,12 +50,12 @@ func main() {
 	defer resp.Body.Close()
 
 	// 读取响应内容
-	body, err := ioutil.ReadAll(resp.Body)
+	_, err = ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	log.Println(string(body))
+	//log.Println(string(body))
 	fmt.Println("启动机器人...")
 	go rebot.TgRobot(conf)
 	r.Run(":5000")
