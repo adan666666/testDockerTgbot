@@ -3,7 +3,7 @@ system:
 
 tgbot:
   Token: "7384710909:AAEGcRFtwuMnoqaCOLA_vRvDE2zcN7ISblI"
-  chatID: -4102331731     # app群chatID: -4102331731   测试Rebot群 ：-1002421880670
-  hour: 18                   # 晚上6点
-  min: 39                    # 39分
-  sec: 10
+  chatID: -1002421880670     # app群chatID: -4102331731   测试Rebot群 ：-1002421880670
+  hour: 9                   # 晚上18点
+  min: 23                   # 39分
+  sec: 10                    #秒
