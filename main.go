@@ -43,19 +43,18 @@ func main() {
 	tr := http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
 	client := &http.Client{Transport: &tr}
 	fmt.Println(client)
-	resp, err := client.Get("https://baidu.com")
+	resp, err := client.Get("https://www.baidu.com")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer resp.Body.Close()
 
 	// 读取响应内容
-	_, err = ioutil.ReadAll(resp.Body)
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	//log.Println(string(body))
+	log.Println(string(body))
 	fmt.Println("启动机器人...")
 	go rebot.TgRobot(conf)
 	r.Run(":5000")

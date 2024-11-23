@@ -1,4 +1,5 @@
 #version: '3.8'
+name: MyTgBot #这个名字是compose容器的名字
 services:
   #放可执行文件不是目录
   app:
