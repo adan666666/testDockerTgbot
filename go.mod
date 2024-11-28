@@ -1,4 +1,4 @@
-module testDocker
+module testDockerTgbot
 
 go 1.23.2
 
